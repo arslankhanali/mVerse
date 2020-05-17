@@ -16,7 +16,9 @@ class Movie {
   final String largecoverimage;
   final List torrents;
 
-  Movie(this.id, this.url, this.imdbcode, this.title, this.titlelong, this.year, this.rating, this.runtime, this.genres, this.summary, this.yttrailercode, this.language, this.mparating, this.largecoverimage, this.torrents);
+  Movie(this.id, this.url, this.imdbcode, this.title, this.titlelong,
+   this.year, this.rating, this.runtime, this.genres, this.summary,
+    this.yttrailercode, this.language, this.mparating, this.largecoverimage, this.torrents);
 
   
   // factory Movie.fromJson(Map<String, dynamic> json) {

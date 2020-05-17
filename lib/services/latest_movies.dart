@@ -37,8 +37,11 @@ class MovieData {
       
 
       for (var m in data["data"]["movies"]){
-        
-        Movie movie= Movie(m["id"], m["url"], m["imdb_code"], m["title"], m["title_long"], m["year"], m["rating"], m["runtime"], m["genres"], m["summary"], m["yt_trailer_code"], m["language"], m["mpa_rating"], m["largecoverimage"], m["torrents"]);
+        //print(m);
+        Movie movie= Movie(m["id"], m["url"], m["imdb_code"],
+         m["title"], m["title_long"], m["year"], m["rating"],
+          m["runtime"], m["genres"], m["summary"], m["yt_trailer_code"],
+           m["language"], m["mpa_rating"], m["large_cover_image"], m["torrents"]);
         ourlist.add(movie);
       }
       return ourlist;
