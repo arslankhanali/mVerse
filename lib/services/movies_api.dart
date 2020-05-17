@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
-import 'package:mVerse/services/Movie.dart';
+import 'package:mVerse/services/movie_class.dart';
 
 
 
