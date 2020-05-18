@@ -14,7 +14,7 @@ class _HomeState extends State<Home> {
 
   void fetchMovies() async {
     List<Movie> ourlist;
-    MovieData instance = MovieData(limit: '50');
+    MovieData instance = MovieData(limit: 10);
     ourlist = await instance.getMovies();
 
     setState(() {
@@ -54,18 +54,18 @@ class _HomeState extends State<Home> {
   Container lastestmovies() {
     return Container(
       child: _ourlist == null
-          ? Padding(
-              padding: EdgeInsets.fromLTRB(00, 300, 0, 0),
-              child: Center(child: LinearProgressIndicator()),
-            )
+          ? Center(
+            heightFactor: MediaQuery.of(context).size.width/4.5,
+            child: LinearProgressIndicator())
           : ListView.builder(
               shrinkWrap: true,
               physics: ScrollPhysics(),
               itemCount: _ourlist.length,
+              
               itemBuilder: (context, index) {
                 Movie m = _ourlist[index];
-                print(m.title);
-                //print(m.data);
+                //print(m.title);
+                
 
                 return Container(
                   margin: EdgeInsets.all(5.0),

@@ -17,10 +17,11 @@ class Movie {
   final String mediumcoverimage;
   final List torrents;
   final dynamic data;
+  final String torrenturl;
 
   Movie(this.id, this.url, this.imdbcode, this.title, this.titlelong,
    this.year, this.rating, this.runtime, this.genres, this.summary,
-    this.yttrailercode, this.language, this.mparating, this.largecoverimage, this.mediumcoverimage,this.torrents,this.data);
+    this.yttrailercode, this.language, this.mparating, this.largecoverimage, this.mediumcoverimage,this.torrents,this.data, this.torrenturl);
 
   
   // factory Movie.fromJson(Map<String, dynamic> json) {
