@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mVerse/pages/home.dart';
+import 'package:mVerse/pages/movieDetails.dart';
 // import 'package:mVerse/pages/loading.dart';
 //import 'package:mVerse/pages/choose_location.dart';
 
@@ -15,7 +16,7 @@ void main() => runApp(MaterialApp(
       ),
     routes: {
       '/': (context) => Home(),
-      // '/home': (context) => Home(),
+      '/moviedetails': (context) => MovieDetails(),
       // '/location': (context) => ChooseLocation(),
 
       //'/new_home': (context) => Home(),

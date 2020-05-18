@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mVerse/pages/movieDetails.dart';
 import 'package:mVerse/services/movie_class.dart';
 import 'package:mVerse/services/movies_api.dart';
 import 'package:transparent_image/transparent_image.dart';
@@ -179,33 +180,46 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
-                      Container(
-                        alignment: Alignment.topLeft,
-                        height: 200,
-                        width: 134,
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).accentColor,
-                          borderRadius: BorderRadius.circular(10.0),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black26,
-                              offset: Offset(0.0, 2.0),
-                              blurRadius: 40.0,
+                      GestureDetector(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => MovieDetails(
+                              m: m,
                             ),
-                          ],
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10.0),
-                          child: FadeInImage.memoryNetwork(
-                            placeholder: kTransparentImage,
-                            image: m.mediumcoverimage,
-                            fit: BoxFit.contain,
                           ),
-                          // child: Image(
-                          //   image: NetworkImage(m.mediumcoverimage),
-                          //   fit: BoxFit.contain,
+                        ),
+                        child: Container(
+                          alignment: Alignment.topLeft,
+                          height: 200,
+                          width: 134,
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).accentColor,
+                            borderRadius: BorderRadius.circular(10.0),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black26,
+                                offset: Offset(0.0, 2.0),
+                                blurRadius: 40.0,
+                              ),
+                            ],
+                          ),
+                          child: Hero(
+                            tag: m.id,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10.0),
+                              child: FadeInImage.memoryNetwork(
+                                placeholder: kTransparentImage,
+                                image: m.mediumcoverimage,
+                                fit: BoxFit.contain,
+                              ),
+                              // child: Image(
+                              //   image: NetworkImage(m.mediumcoverimage),
+                              //   fit: BoxFit.contain,
 
-                          // ),
+                              // ),
+                            ),
+                          ),
                         ),
                       ),
                     ],
