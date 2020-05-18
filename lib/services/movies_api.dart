@@ -40,7 +40,7 @@ class MovieData {
         Movie movie= Movie(m["id"], m["url"], m["imdb_code"],
          m["title"], m["title_long"], m["year"], m["rating"],
           m["runtime"], m["genres"], m["summary"], m["yt_trailer_code"],
-           m["language"], m["mpa_rating"], m["large_cover_image"], m["torrents"]);
+           m["language"], m["mpa_rating"], m["large_cover_image"], m["medium_cover_image"], m["torrents"],m);
         ourlist.add(movie);
       }
       return ourlist;
