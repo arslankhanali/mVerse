@@ -41,6 +41,7 @@ class _HomeState extends State<Home> {
           child: Container(
             child: ListView(
               children: <Widget>[
+                SizedBox(height: 10.0),
                 title(),
                 searchBar(),
                 SizedBox(height: 20.0),
@@ -55,17 +56,17 @@ class _HomeState extends State<Home> {
     return Container(
       child: _ourlist == null
           ? Center(
-            heightFactor: MediaQuery.of(context).size.width/4.5,
-            child: LinearProgressIndicator())
+              heightFactor: MediaQuery.of(context).size.width / 4.5,
+              child: LinearProgressIndicator())
           : ListView.builder(
+              //scrollDirection: Axis.horizontal,
               shrinkWrap: true,
               physics: ScrollPhysics(),
               itemCount: _ourlist.length,
-              
+
               itemBuilder: (context, index) {
                 Movie m = _ourlist[index];
                 //print(m.title);
-                
 
                 return Container(
                   margin: EdgeInsets.all(5.0),
@@ -231,28 +232,41 @@ class _HomeState extends State<Home> {
   }
 
   Widget searchBar() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        Icon(
-          Icons.search,
-          color: Colors.black45,
+    return ListTile(
+        leading: Icon(Icons.search, color: Colors.black45),
+        title: TextField(
+          decoration: InputDecoration(
+              hintText: "Find a movie....",
+              //contentPadding: EdgeInsets.symmetric(vertical: 10),
+              hintStyle: TextStyle(
+                color: Colors.black87,
+              ),
+              border: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.red))),
         ),
-        SizedBox(width: 20),
-        Expanded(
-          child: TextField(
-            decoration: InputDecoration(
-                hintText: "Search....",
-                contentPadding: EdgeInsets.symmetric(vertical: 10),
-                hintStyle: TextStyle(
-                  color: Colors.black87,
-                ),
-                border: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.red))),
-          ),
-        ),
-      ],
-    );
+        trailing: Icon(Icons.movie_filter, color: Theme.of(context).accentColor));
+    // Row(
+    //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //   children: <Widget>[
+    //     Icon(
+    //       Icons.search,
+    //       color: Colors.black45,
+    //     ),
+    //     SizedBox(width: 20),
+    //     Expanded(
+    //       child: TextField(
+    //         decoration: InputDecoration(
+    //             hintText: "Search....",
+    //             contentPadding: EdgeInsets.symmetric(vertical: 10),
+    //             hintStyle: TextStyle(
+    //               color: Colors.black87,
+    //             ),
+    //             border: UnderlineInputBorder(
+    //                 borderSide: BorderSide(color: Colors.red))),
+    //       ),
+    //     ),
+    //   ],
+    // );
   }
 
   Widget title() {
@@ -264,14 +278,14 @@ class _HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              "Movie",
+              "Want to watch",
               style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 30,
               ),
             ),
             Text(
-              "Universe",
+              "something ?",
               style: TextStyle(
                 fontWeight: FontWeight.w200,
                 fontSize: 30,
@@ -280,7 +294,7 @@ class _HomeState extends State<Home> {
           ],
         ),
         Padding(
-          padding: EdgeInsets.only(left: 130),
+          padding: EdgeInsets.only(left: 40),
           child: Container(
             decoration: BoxDecoration(
               color: Theme.of(context).accentColor,

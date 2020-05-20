@@ -34,7 +34,8 @@ class _State extends State<MovieDetails> {
 
   Container boxSecond() {
     return Container(
-      margin: EdgeInsets.all(10.0),
+      alignment: Alignment.center,
+      margin: EdgeInsets.only(top: 10.0),
       width: 325.0,
       height: 125,
       decoration: BoxDecoration(
@@ -60,7 +61,7 @@ class _State extends State<MovieDetails> {
 
   Container boxOne() {
     return Container(
-      margin: EdgeInsets.all(30.0),
+      margin: EdgeInsets.only(top: 30.0,bottom: 5.0,left: 30.0,right: 30.0),
       width: 60.0,
       height: 140,
       decoration: BoxDecoration(

@@ -70,21 +70,5 @@ class MovieData {
          return ourlist;
   
   }
-  //   Future<void> searchMovies() async {
-  //   try{
-  //     // make the request
-  //     String linkquery = 'https://yts.mx/api/v2/list_movies.json?limit=$limit&page=$page&quality=$quality&minimum_rating=$minimumrating&query_term=$queryterm&genre=$genre&sort_by=$sortby&order_by=$orderby&with_rt_rating=$minimumrating';
-  //     Response response = await get(linkquery);
-  //     Map data = jsonDecode(response.body);
-
-  //   }
-  //   catch (e) {
-  //     print(e);
-  //     print("could not fetch movie/s");
-  //   }
-
-  //   // List<Movie>
-
-  // }
 
 }
