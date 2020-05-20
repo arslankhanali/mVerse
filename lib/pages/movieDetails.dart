@@ -19,7 +19,7 @@ class _State extends State<MovieDetails> {
       backgroundColor: Theme.of(context).accentColor,
       appBar: AppBar(
         title: Text(widget.m.title),
-        leading: IconButton(icon:Icon(Icons.add), onPressed: null),
+        actions: <Widget>[IconButton(icon:Icon(Icons.add), onPressed: null)],
       ),
       body: ListView(
         padding: EdgeInsets.only(top: 10.0),
