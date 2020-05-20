@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
 import 'package:mVerse/pages/movieDetails.dart';
 import 'package:mVerse/services/movie_class.dart';
 import 'package:mVerse/services/movies_api.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:mVerse/state/app_state.dart';
+import 'package:mVerse/redux/reducers.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -280,7 +283,7 @@ class _HomeState extends State<Home> {
           ],
         ),
         Padding(
-          padding: EdgeInsets.only(left: 130),
+          padding: EdgeInsets.only(left: 100),
           child: Container(
             decoration: BoxDecoration(
               color: Theme.of(context).accentColor,
@@ -293,11 +296,18 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
-            child: IconButton(
-                icon: Icon(Icons.menu),
-                iconSize: 30.0,
-                color: Colors.white,
-                onPressed: null),
+            child: StoreConnector<AppState,AppState>(
+              converter: (store) => store.state,
+              builder: (context, state){
+                return FlatButton.icon(
+          onPressed: null,
+          icon:Icon(Icons.add_shopping_cart),
+          label: Text('${state.viewnumberofmovies.toInt()}',style:TextStyle(fontSize: 25)));
+              },
+                          
+            )
+            //Icon(Icons.ac_unit),
+            // FlatButton.icon(onPressed: null, icon: null, label: Text("0")),
           ),
         ),
       ],
