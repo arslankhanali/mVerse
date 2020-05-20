@@ -1,15 +1,15 @@
-class movie_watchlist {
+class MovieWatchlistItem {
   int id;
   //description is the text we see on
   //main screen card text
   String name;
   //isDone used to mark what Todo item is completed
   String url;
-  movie_watchlist({this.id,this.name,this.url})
+  MovieWatchlistItem({this.id,this.name,this.url});
   //When using curly braces { } we note dart that
   //the parameters are optional
 
-  factory movie_watchlist.fromDatabaseJson(Map<String, dynamic> data) =>  movie_watchlist(
+  factory MovieWatchlistItem.fromDatabaseJson(Map<String, dynamic> data) =>  MovieWatchlistItem(
     //Factory method will be used to convert JSON objects that
     //are coming from querying the database and converting
     //it into a Todo object

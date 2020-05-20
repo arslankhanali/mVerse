@@ -3,10 +3,13 @@ import 'package:mVerse/pages/movieDetails.dart';
 import 'package:mVerse/services/movie_class.dart';
 import 'package:mVerse/services/movies_api.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:mVerse/bloc/watchlist_bloc.dart';
 
 class Home extends StatefulWidget {
+  final WatchlistBloc watchlistBloc=WatchlistBloc();
   @override
   _HomeState createState() => _HomeState();
+  
 }
 
 class _HomeState extends State<Home> {

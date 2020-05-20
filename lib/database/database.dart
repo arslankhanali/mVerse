@@ -6,7 +6,7 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
-final watchlist = 'watchlist';
+final watchList = 'watchlist';
 class DatabaseProvider {
   // This is singleton class has only one instance and it is created
   // in the line below using private constructor
@@ -42,7 +42,7 @@ class DatabaseProvider {
   // todoTABLE is the name of the table. defined at top==> final todoTABLE = 'Todo';
   // execute execute the string as a command in terminal (I think??)
   void initDB(Database database, int version) async {
-    await database.execute("CREATE TABLE $watchlist ("
+    await database.execute("CREATE TABLE $watchList ("
         "id INTEGER PRIMARY KEY, "
         "name TEXT, "
         /*SQLITE doesn't have boolean type
