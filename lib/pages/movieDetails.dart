@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:mVerse/services/movie_class.dart';
-import 'package:mVerse/services/movies_api.dart';
-import 'package:transparent_image/transparent_image.dart';
 import 'package:mVerse/state/app_state.dart';
 import 'package:mVerse/redux/reducers.dart';
 import 'package:mVerse/redux/actions.dart';

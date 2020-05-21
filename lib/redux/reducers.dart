@@ -9,5 +9,9 @@ AppState reducer(AppState prevState,dynamic action){
     newState.numberOfMovies=action.payload;
   }
 
+  // if (action is addamovie ){
+  //   newState.numberOfMovies=action.payload;
+  // }
+
   return newState;
 }

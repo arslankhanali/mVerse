@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppState{
+  // List<String> movielist;
   int numberOfMovies;
 
   AppState({this.numberOfMovies});
