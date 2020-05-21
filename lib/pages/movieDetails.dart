@@ -16,10 +16,6 @@ class MovieDetails extends StatefulWidget {
 
 class _State extends State<MovieDetails> {
   @override
-
-  // StoreConnector<AppState,AppState>(
-  //       converter: (store) => store.state,
-  //       builder: (context, state) {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Theme.of(context).accentColor,
@@ -34,7 +30,7 @@ class _State extends State<MovieDetails> {
                     icon: Icon(Icons.add),
                     onPressed: () {
                       StoreProvider.of<AppState>(context).dispatch(
-                          Fetchnumberofmovies(state.viewnumberofmovies + 1));
+                          Fetchnumberofmovies([widget.m.title]));
                     },
                   );
                 },

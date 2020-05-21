@@ -6,7 +6,7 @@ AppState reducer(AppState prevState,dynamic action){
   AppState newState=AppState.fromAppState(prevState);
 
   if (action is Fetchnumberofmovies ){
-    newState.numberOfMovies=action.payload;
+    newState.numberOfMovies.add(action.payload[0]);
   }
 
   // if (action is addamovie ){

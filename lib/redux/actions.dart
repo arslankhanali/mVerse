@@ -1,7 +1,9 @@
 class Fetchnumberofmovies{
-final int payload;
+
+final List<String> payload;
 
 Fetchnumberofmovies(this.payload);
 
 
 }
+

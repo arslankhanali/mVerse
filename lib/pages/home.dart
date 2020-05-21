@@ -308,7 +308,7 @@ class _HomeState extends State<Home> {
                 builder: (_) => Watchlistpage(
                   )));},
           icon:Icon(Icons.add_shopping_cart),
-          label: Text('${state.viewnumberofmovies.toInt()}',style:TextStyle(fontSize: 25)
+          label: Text('${state.viewnumberofmovies.length}',style:TextStyle(fontSize: 25)
           ),
                           
             );

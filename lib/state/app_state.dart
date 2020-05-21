@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppState{
   // List<String> movielist;
-  int numberOfMovies;
+  List<String> numberOfMovies;
 
   AppState({this.numberOfMovies});
 
@@ -10,6 +10,6 @@ class AppState{
     numberOfMovies=another.numberOfMovies;
   }
 
-  int get viewnumberofmovies=> numberOfMovies;
+  List<String> get viewnumberofmovies=> numberOfMovies;
 
 }

@@ -19,26 +19,18 @@ class _WatchlistpageState extends State<Watchlistpage> {
           StoreConnector<AppState, AppState>(
             converter: (store) => store.state,
             builder: (context, state) {
-              return Container(
-                  child: Column(
-                children: <Widget>[
-                  Text('${state.viewnumberofmovies}'),
-                  IconButton(
-                    icon: Icon(Icons.keyboard_arrow_up),
-                    onPressed: () {
-                      StoreProvider.of<AppState>(context).dispatch(
-                          Fetchnumberofmovies(state.viewnumberofmovies + 1));
-                    },
-                  ),
-                  IconButton(
-                    icon: Icon(Icons.arrow_downward),
-                    onPressed: () {
-                      StoreProvider.of<AppState>(context).dispatch(
-                          Fetchnumberofmovies(state.viewnumberofmovies - 1));
-                    },
-                  ),
-                ],
-              ));
+              return ListView.builder(
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemCount: state.viewnumberofmovies.length,
+                  itemBuilder: (context, index) {
+                    String m = state.viewnumberofmovies[index];
+                    //print(m.title);
+
+                    return Container(
+                      child:Text(m),
+                    );
+                  });
             },
           ),
         ],
