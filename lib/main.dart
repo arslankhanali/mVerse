@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:mVerse/pages/home.dart';
 import 'package:mVerse/pages/movieDetails.dart';
+import 'package:mVerse/pages/test.dart';
 import 'package:mVerse/redux/actions.dart';
 import 'package:redux/redux.dart';
 import 'package:mVerse/state/app_state.dart';
@@ -40,6 +41,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => Home(),
         '/moviedetails': (context) => MovieDetails(),
+        '/test': (context) => Test(),
+      
       }
       
 ),

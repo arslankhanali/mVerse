@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:mVerse/pages/movieDetails.dart';
 import 'package:mVerse/pages/watchlistpage.dart';
-import 'package:mVerse/services/movie_class.dart';
+// import 'package:mVerse/services/movie_class.dart';
+import 'package:mVerse/services/movie.dart';
 import 'package:mVerse/services/movies_api.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:mVerse/state/app_state.dart';
@@ -18,7 +19,7 @@ class _HomeState extends State<Home> {
 
   void fetchMovies() async {
     List<Movie> ourlist;
-    MovieData instance = MovieData(limit: 10);
+    MovieData instance = MovieData(limit: 50);
     ourlist = await instance.getMovies();
 
     setState(() {
@@ -62,6 +63,7 @@ class _HomeState extends State<Home> {
             heightFactor: MediaQuery.of(context).size.width/4.5,
             child: LinearProgressIndicator())
           : ListView.builder(
+            
               shrinkWrap: true,
               physics: ScrollPhysics(),
               itemCount: _ourlist.length,
@@ -105,7 +107,7 @@ class _HomeState extends State<Home> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Text(
-                                '${m.titlelong} ',
+                                '${m.titleLong} ',
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 20,
@@ -214,7 +216,7 @@ class _HomeState extends State<Home> {
                               borderRadius: BorderRadius.circular(10.0),
                               child: FadeInImage.memoryNetwork(
                                 placeholder: kTransparentImage,
-                                image: m.mediumcoverimage,
+                                image: m.mediumCoverImage,
                                 fit: BoxFit.contain,
                               ),
                               // child: Image(

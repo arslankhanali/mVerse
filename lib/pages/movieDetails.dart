@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:mVerse/services/movie_class.dart';
+import 'package:flutube/flutube.dart';
+// import 'package:mVerse/services/movie_class.dart';
+import 'package:mVerse/services/movie.dart';
 import 'package:mVerse/state/app_state.dart';
 import 'package:mVerse/redux/reducers.dart';
 import 'package:mVerse/redux/actions.dart';
@@ -29,8 +31,8 @@ class _State extends State<MovieDetails> {
                   return IconButton(
                     icon: Icon(Icons.add),
                     onPressed: () {
-                      StoreProvider.of<AppState>(context).dispatch(
-                          Fetchnumberofmovies([widget.m.title]));
+                      StoreProvider.of<AppState>(context)
+                          .dispatch(Fetchnumberofmovies([widget.m.title]));
                     },
                   );
                 },
@@ -45,6 +47,30 @@ class _State extends State<MovieDetails> {
             SizedBox(height: 5.0),
             boxOne(),
             boxSecond(),
+            Text('https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}'),
+           
+            //https://www.youtube.com/watch?v=YzPq8uVgLe8
+            Container(
+              margin: EdgeInsets.all(10.0),
+              width: 325.0,
+              height: 300,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: widget.m.ytTrailerCode!=null?
+              FluTube(
+                'https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}',
+                autoInitialize: true,
+                aspectRatio: 16 / 9,
+                autoPlay: true,
+                looping: true,
+                onVideoStart: () {},
+                onVideoEnd: () {},
+              ):
+              Text('Not Available'),
+              
+            ),
           ],
         ));
   }
@@ -93,7 +119,7 @@ Year: ${widget.m.year}
 Rating: ${widget.m.rating}/10 
 Runtime: ${widget.m.runtime}mins 
 Genres: ${widget.m.genres} 
-MPA rating: ${widget.m.mparating}                   
+MPA rating: ${widget.m.mpaRating}                   
 """,
 // torrentsurl: ${widget.m.torrenturl}
 // torrents: ${widget.m.torrents}
@@ -116,7 +142,7 @@ MPA rating: ${widget.m.mparating}
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30.0),
           child: Image(
-            image: NetworkImage(widget.m.mediumcoverimage),
+            image: NetworkImage(widget.m.mediumCoverImage),
             fit: BoxFit.cover,
           ),
         ),
