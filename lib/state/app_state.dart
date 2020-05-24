@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:mVerse/services/movie.dart';
 
 class AppState{
   // List<String> movielist;
-  List<String> numberOfMovies;
+  List<Movie> watchlist;
 
-  AppState({this.numberOfMovies});
+  AppState({this.watchlist});
 
   AppState.fromAppState(AppState another){
-    numberOfMovies=another.numberOfMovies;
+    watchlist=another.watchlist;
   }
 
-  List<String> get viewnumberofmovies=> numberOfMovies;
+  List<Movie> get viewwatchlist=> watchlist;
 
 }

@@ -1,8 +1,9 @@
-class Fetchnumberofmovies{
+import 'package:mVerse/services/movie.dart';
+class Fetchwatchlist{
 
-final List<String> payload;
+final Movie payload;
 
-Fetchnumberofmovies(this.payload);
+Fetchwatchlist(this.payload);
 
 
 }

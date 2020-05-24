@@ -9,7 +9,7 @@ import 'package:mVerse/state/app_state.dart';
 import 'package:mVerse/redux/reducers.dart';
 
 void main() {
-  final _initialState = AppState(numberOfMovies: []);
+  final _initialState = AppState(watchlist: []);
   final Store<AppState> _store=Store<AppState>(reducer,initialState: _initialState);
 
   runApp(MyApp(store:_store));

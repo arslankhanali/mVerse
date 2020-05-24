@@ -23,6 +23,7 @@ class _State extends State<MovieDetails> {
         backgroundColor: Theme.of(context).accentColor,
         appBar: AppBar(
           title: Text(widget.m.title),
+          //backgroundColor: Theme.of(context).accentColor,
           actions: <Widget>[
             Container(
               child: StoreConnector<AppState, AppState>(
@@ -32,7 +33,7 @@ class _State extends State<MovieDetails> {
                     icon: Icon(Icons.add),
                     onPressed: () {
                       StoreProvider.of<AppState>(context)
-                          .dispatch(Fetchnumberofmovies([widget.m.title]));
+                          .dispatch(Fetchwatchlist(widget.m));
                     },
                   );
                 },
@@ -47,30 +48,30 @@ class _State extends State<MovieDetails> {
             SizedBox(height: 5.0),
             boxOne(),
             boxSecond(),
-            Text('https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}'),
+            // Text('https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}'),
            
-            //https://www.youtube.com/watch?v=YzPq8uVgLe8
-            Container(
-              margin: EdgeInsets.all(10.0),
-              width: 325.0,
-              height: 300,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              child: widget.m.ytTrailerCode!=null?
-              FluTube(
-                'https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}',
-                autoInitialize: true,
-                aspectRatio: 16 / 9,
-                autoPlay: true,
-                looping: true,
-                onVideoStart: () {},
-                onVideoEnd: () {},
-              ):
-              Text('Not Available'),
+            // //https://www.youtube.com/watch?v=YzPq8uVgLe8
+            // Container(
+            //   margin: EdgeInsets.all(10.0),
+            //   width: 325.0,
+            //   height: 300,
+            //   decoration: BoxDecoration(
+            //     color: Colors.white,
+            //     borderRadius: BorderRadius.circular(15.0),
+            //   ),
+            //   child: widget.m.ytTrailerCode!=null?
+            //   FluTube(
+            //     'https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}',
+            //     autoInitialize: true,
+            //     aspectRatio: 16 / 9,
+            //     autoPlay: true,
+            //     looping: true,
+            //     onVideoStart: () {},
+            //     onVideoEnd: () {},
+            //   ):
+            //   Text('Not Available'),
               
-            ),
+            // ),
           ],
         ));
   }
