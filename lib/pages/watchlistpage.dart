@@ -13,7 +13,8 @@ class _WatchlistpageState extends State<Watchlistpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Cart')),
+      appBar: AppBar(title: Text('Cart'),
+      backgroundColor: Theme.of(context).accentColor,),
       body: Column(
         children: <Widget>[
           StoreConnector<AppState, AppState>(
