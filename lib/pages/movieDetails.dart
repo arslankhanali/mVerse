@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,7 +6,7 @@ import 'package:mVerse/services/movie.dart';
 import 'package:mVerse/state/app_state.dart';
 import 'package:mVerse/redux/actions.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 class MovieDetails extends StatefulWidget {
   final Movie m;
@@ -21,8 +20,8 @@ class MovieDetails extends StatefulWidget {
 }
 
 class _State extends State<MovieDetails> {
-
   final List<String> listy = ['1', '2'];
+  
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +35,15 @@ class _State extends State<MovieDetails> {
               child: StoreConnector<AppState, AppState>(
                 converter: (store) => store.state,
                 builder: (context, state) {
+                  final snackBar = SnackBar(content: Text("${widget.m.title} added to yourlist"));
                   return IconButton(
                     icon: Icon(Icons.add),
                     onPressed: () {
+                      
+                      Scaffold.of(context).showSnackBar(snackBar);
                       StoreProvider.of<AppState>(context)
                           .dispatch(Fetchwatchlist(widget.m));
+                      
                     },
                   );
                 },
@@ -54,15 +57,17 @@ class _State extends State<MovieDetails> {
             poster(),
 
             getTorrentButtons(widget.m),
+            SizedBox(height: 15.0),
+            getUrlLauncher(widget.m),
+
+           
 
             SizedBox(height: 5.0),
             boxOne(),
-            //boxSecond(),
-            YoutubeWv(widget: widget),
+            boxSecond(),
+            //YoutubeWv(widget: widget),
             SizedBox(height: 10),
-            ImdbWv(widget: widget)
-
-
+            //ImdbWv(widget: widget)
           ],
         ));
   }
@@ -163,27 +168,28 @@ URL: ${m.torrents[i].url}
                     """),
                     actions: <Widget>[
                       FlatButton.icon(
-                        icon:Icon(Icons.link),
+                        icon: Icon(Icons.link),
                         label: Text('link'),
                         onPressed: () {
-                          Clipboard.setData(new ClipboardData(text: '${m.torrents[i].url}'));
+                          Clipboard.setData(
+                              new ClipboardData(text: '${m.torrents[i].url}'));
                         },
                       ),
                       FlatButton.icon(
-                        icon:Icon(Icons.content_copy),
+                        icon: Icon(Icons.content_copy),
                         label: Text('Copy'),
                         onPressed: () {
-                          Clipboard.setData(new ClipboardData(text: '${m.torrents[i].url}'));
+                          Clipboard.setData(
+                              new ClipboardData(text: '${m.torrents[i].url}'));
                         },
                       ),
                       FlatButton.icon(
-                        icon:Icon(Icons.close),
+                        icon: Icon(Icons.close),
                         label: Text(''),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
                       ),
-                      
                     ],
                   );
                 });
@@ -191,8 +197,41 @@ URL: ${m.torrents[i].url}
         ),
       );
     }
-    return new Row(mainAxisAlignment: MainAxisAlignment.center,
-    children: list);
+    return new Row(mainAxisAlignment: MainAxisAlignment.center, children: list);
+  }
+
+  Widget getUrlLauncher(Movie m) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        FlatButton.icon(
+          icon: Icon(Icons.local_movies),
+          label: Text('IMDB'),
+          onPressed: () async {
+                    final url =  "https://www.imdb.com/title/${widget.m.imdbCode}";
+
+                    if (await canLaunch(url)) {
+                      await launch(url, forceWebView: true);
+                    } else {
+                      SnackBar(content: Text("Not Available"));
+                    }
+                  },
+        ),
+        FlatButton.icon(
+          icon: Icon(Icons.play_circle_filled),
+          label: Text('Trailer'),
+          onPressed: () async {
+                    final url =  "https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}?autoplay=0";
+
+                    if (await canLaunch(url)) {
+                      await launch(url, forceWebView: true);
+                    } else {
+                      SnackBar(content: Text("Not Available"));
+                    }
+                  },
+        ),
+      ],
+    );
   }
 }
 
@@ -216,7 +255,7 @@ class ImdbWv extends StatelessWidget {
         ),
         child: WebView(
           initialUrl: "https://www.imdb.com/title/${widget.m.imdbCode}",
-           gestureNavigationEnabled:true,
+          gestureNavigationEnabled: true,
           //javascriptMode: JavascriptMode.unrestricted,
           // onWebViewCreated: (WebViewController webViewController) {
           //       _controller.complete(webViewController);

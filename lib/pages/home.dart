@@ -45,7 +45,7 @@ class _HomeState extends State<Home> {
             DrawerHeader(
               child: Text('SHOUT OUT!', style: TextStyle(
                 fontFamily: 'RockSalt',
-                 fontSize: 30.0,
+                 fontSize: 20.0,
                  fontWeight: FontWeight.bold,
                  letterSpacing: 5.0,
                  wordSpacing: 10.0,
@@ -74,12 +74,13 @@ AB USI MICKEY
 ARON ABHI IRTZ
 & All the peeps I met
 @ ANU n LMZ
+- rc
 
                 """
                 , style: TextStyle(
                   fontFamily: 'RockSalt',
                   fontStyle: FontStyle.italic,
-                   fontSize: 15.0,
+                   fontSize: 10.0,
                    fontWeight: FontWeight.bold,
                    letterSpacing: 5.0,
                    wordSpacing: 10.0,
