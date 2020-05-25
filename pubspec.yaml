@@ -51,9 +51,18 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  fonts:
+    - family: DancingScript
+      fonts:
+        - asset: assets/fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf
+    - family: RockSalt
+      fonts:
+        - asset: assets/fonts/Rock_Salt/RockSalt-Regular.ttf
+          
+
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - assets/
+  # assets:
+  #   - assets/
 
 
 

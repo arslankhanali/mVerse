@@ -56,11 +56,11 @@ class _State extends State<MovieDetails> {
             getTorrentButtons(widget.m),
 
             SizedBox(height: 5.0),
-            //boxOne(),
+            boxOne(),
             //boxSecond(),
-            //YoutubeWv(widget: widget),
+            YoutubeWv(widget: widget),
             SizedBox(height: 10),
-            //ImdbWv(widget: widget)
+            ImdbWv(widget: widget)
 
 
           ],

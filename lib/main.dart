@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.white,
           //accentColor: Colors.yellow[800],
           accentColor: Colors.lime,
-          //accentColor: Colors.deepPurple[300],
+          splashColor: Colors.white,
           canvasColor: Colors.black,
           scaffoldBackgroundColor: Color(0xFFF3F5F7),
           backgroundColor:Colors.white,
