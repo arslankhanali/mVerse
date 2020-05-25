@@ -7,13 +7,10 @@ AppState reducer(AppState prevState, dynamic action) {
 
   if (action is Fetchwatchlist) {
     if (!newState.watchlist.contains(action.payload)) {
-      newState.watchlist.add(action.payload);
+      newState.watchlist.insert(0, action.payload);
+      // newState.watchlist.add(action.payload);
     }
   }
-
-  // if (action is addamovie ){
-  //   newState.numberOfMovies=action.payload;
-  // }
 
   return newState;
 }

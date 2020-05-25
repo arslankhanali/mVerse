@@ -33,7 +33,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       theme: ThemeData(
           primaryColor: Colors.white,
-          accentColor: Colors.yellow[800],
+          //accentColor: Colors.yellow[800],
+          accentColor: Colors.lime,
+          //accentColor: Colors.deepPurple[300],
           canvasColor: Colors.black,
           scaffoldBackgroundColor: Color(0xFFF3F5F7),
           backgroundColor:Colors.white,
