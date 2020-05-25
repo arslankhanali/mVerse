@@ -23,7 +23,7 @@ class MovieData {
 
     for (int i = 1; i < pages + 1; i++) {
         String page = i.toString();
-        String link ='https://yts.mx/api/v2/list_movies.json?limit=5&page=$page';
+        String link ='https://yts.mx/api/v2/list_movies.json?limit=50&page=$page';
         try {
           response = await get(link);
         } catch (e) {

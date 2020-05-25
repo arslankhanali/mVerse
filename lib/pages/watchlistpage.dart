@@ -3,6 +3,7 @@ import 'package:mVerse/state/app_state.dart';
 import 'package:mVerse/redux/actions.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:mVerse/services/movie.dart';
+import 'package:mVerse/widgets/movielist.dart';
 
 class Watchlistpage extends StatefulWidget {
   @override
@@ -15,23 +16,20 @@ class _WatchlistpageState extends State<Watchlistpage> {
     return Scaffold(
       appBar: AppBar(title: Text('Cart'),
       backgroundColor: Theme.of(context).accentColor,),
-      body: Column(
+      body: ListView(
         children: <Widget>[
+          SizedBox(height: 20,),
           StoreConnector<AppState, AppState>(
             converter: (store) => store.state,
             builder: (context, state) {
-              return ListView.builder(
-                  shrinkWrap: true,
-                  physics: ScrollPhysics(),
-                  itemCount: state.viewnumberofmovies.length,
-                  itemBuilder: (context, index) {
-                    String m = state.viewnumberofmovies[index];
-                    //print(m.title);
-
-                    return Container(
-                      child:Text(m),
-                    );
-                  });
+              return  Latestmovie(ourlist: state.viewwatchlist, context: context);
+              // ListView( 
+              //   scrollDirection: Axis.vertical,
+              //   children: <Widget>[
+              //   Latestmovie(ourlist: state.viewwatchlist, context: context)
+              // ],
+              // );
+          
             },
           ),
         ],

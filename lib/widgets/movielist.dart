@@ -191,7 +191,10 @@ class Latestmovie extends StatelessWidget {
                   ),
                 );
               },
+              
             ),
+          
     );
+    
   }
 }

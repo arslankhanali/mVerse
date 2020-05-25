@@ -12,8 +12,10 @@ class SearchMovie extends StatefulWidget {
 
 class _SearchMovieState extends State<SearchMovie> {
   List<Movie> _ourlist;
+  
   String dropdownValue = 'One';
   bool loading= true;
+  String queryterm="empty";
 
   void searchMovies(value) async {
     List<Movie> ourlist;
@@ -22,6 +24,8 @@ class _SearchMovieState extends State<SearchMovie> {
 
     setState(() {
       _ourlist = ourlist;
+      queryterm=value;
+      loading= false;
   
     });
   }
@@ -37,7 +41,7 @@ class _SearchMovieState extends State<SearchMovie> {
           children: <Widget>[
             searchbar(),
             SizedBox(height: 20,),
-            Searchmovie(ourlist: _ourlist, context: context),
+            Searchmovie(ourlist: _ourlist, context: context,queryterm:queryterm),
             
           ],
         ));

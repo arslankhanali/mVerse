@@ -65,7 +65,7 @@ class TitleBar extends StatelessWidget {
                 builder: (_) => Watchlistpage(
                   )));},
           icon:Icon(Icons.add_shopping_cart),
-          label: Text('${state.viewnumberofmovies.length}',style:TextStyle(fontSize: 25)
+          label: Text('${state.watchlist.length}',style:TextStyle(fontSize: 25)
           ),
                           
             );

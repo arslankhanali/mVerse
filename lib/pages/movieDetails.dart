@@ -33,7 +33,7 @@ class _State extends State<MovieDetails> {
                     icon: Icon(Icons.add),
                     onPressed: () {
                       StoreProvider.of<AppState>(context)
-                          .dispatch(Fetchnumberofmovies([widget.m.title]));
+                          .dispatch(Fetchwatchlist(widget.m));
                     },
                   );
                 },
