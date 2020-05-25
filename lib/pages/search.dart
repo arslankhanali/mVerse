@@ -41,13 +41,9 @@ class _SearchMovieState extends State<SearchMovie> {
           children: <Widget>[
             searchbar(),
             SizedBox(height: 20,),
-<<<<<<< HEAD
-            //_ourlist.length!=null ?
+
             Searchmovie(ourlist: _ourlist, context: context,queryterm:queryterm),
-            //Text("Not found")
-=======
-            Searchmovie(ourlist: _ourlist, context: context,queryterm:queryterm),
->>>>>>> 4ddc5b2ab9c98ca3431bc4c79590f2da449590de
+
             
           ],
         ));

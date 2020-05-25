@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
 
   void fetchMovies() async {
     List<Movie> ourlist;
-    MovieData instance = MovieData(limit: 100);
+    MovieData instance = MovieData(limit: 50);
     ourlist = await instance.getMovies();
 
     setState(() {
