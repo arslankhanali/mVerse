@@ -5,7 +5,6 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:mVerse/services/movie.dart';
 import 'package:mVerse/state/app_state.dart';
 import 'package:mVerse/redux/actions.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MovieDetails extends StatefulWidget {
