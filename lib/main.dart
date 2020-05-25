@@ -3,7 +3,6 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:mVerse/pages/home.dart';
 import 'package:mVerse/pages/movieDetails.dart';
 import 'package:mVerse/pages/test.dart';
-import 'package:mVerse/redux/actions.dart';
 import 'package:redux/redux.dart';
 import 'package:mVerse/state/app_state.dart';
 import 'package:mVerse/redux/reducers.dart';

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mVerse/state/app_state.dart';
-import 'package:mVerse/redux/actions.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:mVerse/services/movie.dart';
 import 'package:mVerse/widgets/movielist.dart';
 
 class Watchlistpage extends StatefulWidget {

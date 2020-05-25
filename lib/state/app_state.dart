@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+
 import 'package:mVerse/services/movie.dart';
 
 class AppState{

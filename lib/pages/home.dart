@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
 
   void fetchMovies() async {
     List<Movie> ourlist;
-    MovieData instance = MovieData(limit: 50);
+    MovieData instance = MovieData(limit: 150);
     ourlist = await instance.getMovies();
 
     setState(() {
@@ -37,6 +37,7 @@ class _HomeState extends State<Home> {
           child: Container(
             child: ListView(
               children: <Widget>[
+                SizedBox(height:30),
                 TitleBar(context: context, lineone: "Movie", linetwo: "Universe"),
                 //searchBar(),
                 SizedBox(height: 20.0),

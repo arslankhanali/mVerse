@@ -20,7 +20,7 @@ class TitleBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        SizedBox(width: 45),
+        SizedBox(width: 30),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

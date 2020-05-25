@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:mVerse/services/movie.dart';
 import 'package:mVerse/services/movies_api.dart';

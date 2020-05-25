@@ -1,16 +1,10 @@
-import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:flutube/flutube.dart';
-// import 'package:mVerse/services/movie_class.dart';
-import 'package:mVerse/services/torrent.dart';
 import 'package:mVerse/services/movie.dart';
 import 'package:mVerse/state/app_state.dart';
-import 'package:mVerse/redux/reducers.dart';
 import 'package:mVerse/redux/actions.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -27,8 +21,7 @@ class MovieDetails extends StatefulWidget {
 }
 
 class _State extends State<MovieDetails> {
-  final Completer<WebViewController> _controller =
-      Completer<WebViewController>();
+
   final List<String> listy = ['1', '2'];
 
   @override
@@ -75,7 +68,7 @@ class _State extends State<MovieDetails> {
                 ),
                 child: WebView(
                   initialUrl:
-                      "https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}",
+                      "https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}?autoplay=0",
                   javascriptMode: JavascriptMode.unrestricted,
                   // onWebViewCreated: (WebViewController webViewController) {
                   //       _controller.complete(webViewController);
@@ -167,7 +160,7 @@ MPA rating: ${widget.m.mpaRating}
     return Container(
       alignment: Alignment.center,
       child: Hero(
-        tag: widget.m.id,
+        tag: widget.m.hashCode,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(30.0),
           child: Image(
@@ -228,7 +221,6 @@ URL: ${m.torrents[i].url}
         ),
       );
     }
-    ;
     return new Row(mainAxisAlignment: MainAxisAlignment.center,
     children: list);
   }

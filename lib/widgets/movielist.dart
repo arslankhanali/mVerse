@@ -20,7 +20,7 @@ class Latestmovie extends StatelessWidget {
       child: _ourlist == null
           ? Center(
             heightFactor: MediaQuery.of(context).size.width/4.5,
-            child: LinearProgressIndicator())
+            child: CircularProgressIndicator())
           : ListView.builder(
             
               shrinkWrap: true,
@@ -170,7 +170,7 @@ class Latestmovie extends StatelessWidget {
                             ],
                           ),
                           child: Hero(
-                            tag: m.id,
+                            tag: m.hashCode,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10.0),
                               child: FadeInImage.memoryNetwork(

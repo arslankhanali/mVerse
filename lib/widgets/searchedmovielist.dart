@@ -184,7 +184,7 @@ class Searchmovie extends StatelessWidget {
                                 ],
                               ),
                               child: Hero(
-                                tag: m.id,
+                                tag: m.hashCode,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10.0),
                                   child: FadeInImage.memoryNetwork(
