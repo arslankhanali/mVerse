@@ -58,39 +58,9 @@ class _State extends State<MovieDetails> {
             SizedBox(height: 5.0),
             //boxOne(),
             //boxSecond(),
-            Container(
-                margin: EdgeInsets.only(left: 10.0, right: 10),
-                width: 325.0,
-                height: 355,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).accentColor,
-                  // borderRadius: BorderRadius.circular(15.0),
-                ),
-                child: WebView(
-                  initialUrl:
-                      "https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}?autoplay=0",
-                  javascriptMode: JavascriptMode.unrestricted,
-                  // onWebViewCreated: (WebViewController webViewController) {
-                  //       _controller.complete(webViewController);
-                  // },
-                )),
+            //YoutubeWv(widget: widget),
             SizedBox(height: 10),
-            Container(
-                margin: EdgeInsets.only(left: 10, right: 10),
-                width: 325.0,
-                height: 5000,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).accentColor,
-                  // borderRadius: BorderRadius.circular(30.0),
-                ),
-                child: WebView(
-                  initialUrl: "https://www.imdb.com/title/${widget.m.imdbCode}",
-                   gestureNavigationEnabled:true,
-                  //javascriptMode: JavascriptMode.unrestricted,
-                  // onWebViewCreated: (WebViewController webViewController) {
-                  //       _controller.complete(webViewController);
-                  // },
-                ))
+            //ImdbWv(widget: widget)
 
 
           ],
@@ -223,5 +193,63 @@ URL: ${m.torrents[i].url}
     }
     return new Row(mainAxisAlignment: MainAxisAlignment.center,
     children: list);
+  }
+}
+
+class ImdbWv extends StatelessWidget {
+  const ImdbWv({
+    Key key,
+    @required this.widget,
+  }) : super(key: key);
+
+  final MovieDetails widget;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        margin: EdgeInsets.only(left: 10, right: 10),
+        width: 325.0,
+        height: 5000,
+        decoration: BoxDecoration(
+          color: Theme.of(context).accentColor,
+          // borderRadius: BorderRadius.circular(30.0),
+        ),
+        child: WebView(
+          initialUrl: "https://www.imdb.com/title/${widget.m.imdbCode}",
+           gestureNavigationEnabled:true,
+          //javascriptMode: JavascriptMode.unrestricted,
+          // onWebViewCreated: (WebViewController webViewController) {
+          //       _controller.complete(webViewController);
+          // },
+        ));
+  }
+}
+
+class YoutubeWv extends StatelessWidget {
+  const YoutubeWv({
+    Key key,
+    @required this.widget,
+  }) : super(key: key);
+
+  final MovieDetails widget;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        margin: EdgeInsets.only(left: 10.0, right: 10),
+        width: 325.0,
+        height: 355,
+        decoration: BoxDecoration(
+          color: Theme.of(context).accentColor,
+          // borderRadius: BorderRadius.circular(15.0),
+        ),
+        child: WebView(
+          initialUrl:
+              "https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}?autoplay=0",
+          javascriptMode: JavascriptMode.unrestricted,
+          // onWebViewCreated: (WebViewController webViewController) {
+          //       _controller.complete(webViewController);
+          // },
+        ));
   }
 }

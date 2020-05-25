@@ -19,7 +19,8 @@ class Latestmovie extends StatelessWidget {
     return Container(
       child: _ourlist == null
           ? Center(
-            heightFactor: MediaQuery.of(context).size.width/4.5,
+            
+            //heightFactor: MediaQuery.of(context).size.width/4.5,
             child: CircularProgressIndicator())
           : ListView.builder(
             
@@ -173,16 +174,16 @@ class Latestmovie extends StatelessWidget {
                             tag: m.hashCode,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10.0),
-                              child: FadeInImage.memoryNetwork(
+                              child: 
+                              // new Image(
+                              //   image: NetworkImageWithRetry(m.mediumCoverImage),
+                              //   )
+                              FadeInImage.memoryNetwork(
                                 placeholder: kTransparentImage,
                                 image: m.mediumCoverImage,
                                 fit: BoxFit.contain,
                               ),
-                              // child: Image(
-                              //   image: NetworkImage(m.mediumcoverimage),
-                              //   fit: BoxFit.contain,
-
-                              // ),
+                              
                             ),
                           ),
                         ),

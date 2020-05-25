@@ -41,7 +41,7 @@ class TitleBar extends StatelessWidget {
           ],
         ),
         Padding(
-          padding: EdgeInsets.only(left: 100),
+          padding: EdgeInsets.only(left: 75),
           child: Container(
             decoration: BoxDecoration(
               color: Theme.of(context).accentColor,
