@@ -224,71 +224,13 @@ URL: ${m.torrents[i].url}
                     final url =  "https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}?autoplay=0";
 
                     if (await canLaunch(url)) {
-                      await launch(url, forceWebView: true);
+                      await launch(url, forceWebView: true,enableJavaScript: true);
                     } else {
                       SnackBar(content: Text("Not Available"));
                     }
                   },
-        ),
+        ), 
       ],
     );
-  }
-}
-
-class ImdbWv extends StatelessWidget {
-  const ImdbWv({
-    Key key,
-    @required this.widget,
-  }) : super(key: key);
-
-  final MovieDetails widget;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        margin: EdgeInsets.only(left: 10, right: 10),
-        width: 325.0,
-        height: 5000,
-        decoration: BoxDecoration(
-          color: Theme.of(context).accentColor,
-          // borderRadius: BorderRadius.circular(30.0),
-        ),
-        child: WebView(
-          initialUrl: "https://www.imdb.com/title/${widget.m.imdbCode}",
-          gestureNavigationEnabled: true,
-          //javascriptMode: JavascriptMode.unrestricted,
-          // onWebViewCreated: (WebViewController webViewController) {
-          //       _controller.complete(webViewController);
-          // },
-        ));
-  }
-}
-
-class YoutubeWv extends StatelessWidget {
-  const YoutubeWv({
-    Key key,
-    @required this.widget,
-  }) : super(key: key);
-
-  final MovieDetails widget;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        margin: EdgeInsets.only(left: 10.0, right: 10),
-        width: 325.0,
-        height: 355,
-        decoration: BoxDecoration(
-          color: Theme.of(context).accentColor,
-          // borderRadius: BorderRadius.circular(15.0),
-        ),
-        child: WebView(
-          initialUrl:
-              "https://www.youtube.com/watch?v=${widget.m.ytTrailerCode}?autoplay=0",
-          javascriptMode: JavascriptMode.unrestricted,
-          // onWebViewCreated: (WebViewController webViewController) {
-          //       _controller.complete(webViewController);
-          // },
-        ));
   }
 }
