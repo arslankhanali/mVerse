@@ -3,7 +3,7 @@
 Provides Imdb page imformation, youtube and wikipedia page for your movies. Allowa you to save movies in watchlist. Provides statistics to you about your watchlist
 
 ## Simple Usage
-![alt text][logo]
+![alt text][Use case1]
 
 ## Table of Contents
 * [Technologies](#Technologies)
@@ -124,4 +124,4 @@ RC
    
     -->
 
-    [gif]: https://github.com/arslankhanali/mVerse/blob/master/Readme/use-case1.gif "Use Case"
+    [Use case1]: <https://github.com/arslankhanali/mVerse/blob/master/Readme/use-case1.gif>
