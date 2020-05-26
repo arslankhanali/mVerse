@@ -1,18 +1,32 @@
 # mVerse
-##### Get all your favourite movies details in one app  
-Provides Imdb page imformation, youtube and wikipedia page for your movies. Allowa you to save movies in watchlist. Provides statistics to you about your watchlist
+##### Get all your favourite movie's details in one page  
+* Provides Imdb page imformation, youtube and wikipedia page for your movie. 
+* Allows you to save movies in watchlist. 
+* Provides statistics to you about your watchlist. 
+* Suggest movies on streaming platforms or with Dvds
 
-## Simple Usage
+## Use Cases
 ![Use Case 1](https://github.com/arslankhanali/mVerse/blob/master/Readme/use-case1.gif)
 
 ## Table of Contents
+* [Concept](#Concept)
+* [ProblemStatement](#ProblemStatement)
 * [Technologies](#Technologies)
-* [Setup](#LocalSetup)
-* [ToDo](#ToDo)
-* [Troubleshooting](#Troubleshooting)
-* [Debugging](#Debugging)
-* [API_Documentation](#API_Documentation)
-* [Acknowledgement](#Acknowledgement)
+* [Future](#Future)
+
+## Concept
+tba
+## ProblemStatement
+tba
+
+## Technologies  
+* FLutter
+* Redux for state management
+* Dart Backend
+* APIs
+
+## Future
+tba
 
 <!-- ## Technologies
 * [Youtube Data API v3]
@@ -124,4 +138,3 @@ RC
    
     -->
 
-    [Use case1]:<https://github.com/arslankhanali/mVerse/blob/master/Readme/use-case1.gif>
